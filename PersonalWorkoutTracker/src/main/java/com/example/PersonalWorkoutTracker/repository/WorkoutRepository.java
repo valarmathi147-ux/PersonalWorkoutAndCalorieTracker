@@ -9,7 +9,14 @@ import java.util.List;
 
 @Repository
 public interface WorkoutRepository extends JpaRepository<Workout, Long> {
-    List<Workout> findByUserId(Long userId);
-    List<Workout> findByUserIdAndWorkoutDateBetween(Long userId, LocalDate startDate, LocalDate endDate);
-}
 
+    // Get all workouts of a particular user
+    List<Workout> findByUserId(Long userId);
+
+    // Get workouts of a user between two dates
+    List<Workout> findByUserIdAndWorkoutDateBetween(
+            Long userId,
+            LocalDate startDate,
+            LocalDate endDate
+    );
+}

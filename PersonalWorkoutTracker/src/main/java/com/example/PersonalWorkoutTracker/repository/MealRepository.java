@@ -9,7 +9,14 @@ import java.util.List;
 
 @Repository
 public interface MealRepository extends JpaRepository<Meal, Long> {
-    List<Meal> findByUserId(Long userId);
-    List<Meal> findByUserIdAndMealDateBetween(Long userId, LocalDate startDate, LocalDate endDate);
-}
 
+    // Get all meals of a particular user
+    List<Meal> findByUserId(Long userId);
+
+    // Get meals of a user between two dates
+    List<Meal> findByUserIdAndMealDateBetween(
+            Long userId,
+            LocalDate startDate,
+            LocalDate endDate
+    );
+}
